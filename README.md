@@ -62,7 +62,8 @@ jupyter notebook notebooks/01_mnist_mlp.ipynb
 | Incorrect Classifications | 236           |
 | Test Loss (cross-entropy) | ≈ 0.13–0.14   |
 
-Confusion Matrix
+
+![Confusion Matrix](reports/confusion_matrix.png)
 
 
 ## 🔍 Features
