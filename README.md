@@ -81,6 +81,6 @@ jupyter notebook notebooks/01_mnist_mlp.ipynb
 - Export ONNX + small inference demo
 
 ## 📜 License
-MIT (see LICENSE)
+MIT (see [LICENSE](LICENSE))
 
 ---
