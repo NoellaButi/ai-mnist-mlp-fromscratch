@@ -1,60 +1,80 @@
 # MNIST Digits Classification — NumPy MLP 🔢🧠  
-Multi-Layer Perceptron (MLP) with Backpropagation from Scratch in NumPy  
+Multi-Layer Perceptron (MLP) with Backpropagation **from scratch in NumPy**.
 
-![Language](https://img.shields.io/badge/language-Python-blue.svg) 
-![Notebook](https://img.shields.io/badge/tool-Jupyter-orange.svg) 
-![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)  
+![Language](https://img.shields.io/badge/language-Python-blue.svg)
+![Notebook](https://img.shields.io/badge/tool-Jupyter-orange.svg)
+![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)
+![CI](https://github.com/NoellaButi/ai-mnist-mlp-fromscratch/actions/workflows/ci.yml/badge.svg?branch=main)
 
 ---
 
-✨ **Overview**  
-This project implements a Multi-Layer Perceptron (MLP) classifier for MNIST digits entirely in **NumPy**, with manual backpropagation, SGD + momentum, learning-rate decay, and optional L2 regularization & early stopping.  
+## ✨ Overview  
+This project implements a **Multi-Layer Perceptron (MLP)** for MNIST digit classification using only **NumPy**.  
+It demonstrates end-to-end understanding of neural networks without frameworks: manual forward pass, backpropagation, and training loop.  
 
-The goal is to demonstrate **end-to-end understanding of neural networks without frameworks**, plus add industry-style evaluation and artifacts.  
+Includes professional-style **evaluation artifacts**: confusion matrix, per-class metrics, calibration (ECE), saliency maps, and a minimal model card.
 
-🛠️ **Workflow**  
-- Load & normalize MNIST CSV data ([0.01, 1.0])  
+---
+
+## 🛠️ Workflow  
+- Load & normalize MNIST CSV data → `[0.01, 1.0]`  
 - One-hot encode labels  
-- Xavier initialization for weights  
-- Forward pass (sigmoid, softmax)  
-- Backpropagation (cross-entropy + L2)  
-- Train with SGD + momentum, learning rate decay, early stopping  
-- Evaluate with confusion matrix, per-class metrics  
+- Initialize weights with Xavier  
+- Forward pass (sigmoid → softmax)  
+- Backpropagation (cross-entropy + L2 regularization)  
+- Train with SGD + momentum + learning rate decay (optional early stopping)  
+- Evaluate with accuracy, confusion matrix, precision/recall/F1  
+- Save metrics + artifacts (plots, weights, configs)
 
-📁 **Repository Layout**  
+---
+
+## 📁 Repository Layout  
 ```bash
-notebooks/   # Jupyter notebook with full step-by-step pipeline
-reports/     # metrics, plots, model card
-artifacts/   # saved weights/biases (.npz)
-README.md    # this overview
+ai-mnist-mlp-fromscratch/
+├─ notebooks/
+│  └─ 01_mnist_mlp.ipynb        # full pipeline
+├─ reports/
+│  ├─ confusion_matrix.png
+│  ├─ train_history.json
+│  ├─ metrics.json
+│  ├─ model_card.json
+│  └─ config.json
+├─ artifacts/
+│  └─ mlp_weights_biases_1hidden.npz
+├─ data/                        # CSVs or download script
+├─ requirements.txt
+└─ README.md
 ```
 
-🚦 **Demo**
-
+## 🚦 Quickstart
 Run the Jupyter notebook:
 ```bash
 jupyter notebook notebooks/01_mnist_mlp.ipynb
 ```
 
-🔍 **Features**
+## 📊 Results (Held-Out Test Set)
+Metric	Value
+Hidden Layers	1 × 256 logistic
+Test Accuracy	97.64%
+Correct Classifications	9,764
+Incorrect Classifications	236
+
+
+## 🔍 Features
 - Manual forward & backward pass in NumPy
-- SGD with momentum, learning-rate decay
+- SGD with momentum + LR decay
 - Early stopping and L2 regularization
-- Evaluation with precision, recall, F1, confusion matrix
+- Evaluation: confusion matrix, precision/recall/F1
 - Reliability diagram + Expected Calibration Error (ECE)
 - Saliency maps for explainability
-- Model card in `reports/`
+- Model card in reports/
 
-🚦 **Results (Latest)**
-```bash
-Hidden layers: 1 × 256 logistic
-Test accuracy: 97.64%
-Correct classifications: 9,764
-Incorrect classifications: 236
-```
+## 🔮 Roadmap
+- Add 2-hidden-layer experiment
+- Replace sigmoid → ReLU, try Adam optimizer
+- Export ONNX + small inference demo
 
-📜 **License**
-
-MIT (see [LICENSE](LICENSE))
+## 📜 License
+MIT (see LICENSE)
 
 ---
