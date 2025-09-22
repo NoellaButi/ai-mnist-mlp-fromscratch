@@ -53,11 +53,16 @@ jupyter notebook notebooks/01_mnist_mlp.ipynb
 ```
 
 ## 📊 Results (Held-Out Test Set)
-Metric	Value
-Hidden Layers	1 × 256 logistic
-Test Accuracy	97.64%
-Correct Classifications	9,764
-Incorrect Classifications	236
+
+| Metric                   | Value         |
+|---------------------------|--------------:|
+| Hidden Layers             | 1 × 256 logistic |
+| Test Accuracy             | **97.64%**    |
+| Correct Classifications   | 9,764         |
+| Incorrect Classifications | 236           |
+| Test Loss (cross-entropy) | ≈ 0.13–0.14   |
+
+Confusion Matrix
 
 
 ## 🔍 Features
@@ -67,7 +72,7 @@ Incorrect Classifications	236
 - Evaluation: confusion matrix, precision/recall/F1
 - Reliability diagram + Expected Calibration Error (ECE)
 - Saliency maps for explainability
-- Model card in reports/
+- Model card in `reports/`
 
 ## 🔮 Roadmap
 - Add 2-hidden-layer experiment
